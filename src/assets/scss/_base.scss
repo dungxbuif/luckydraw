@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap");
 
 *:not(input, textarea, select) {
   -webkit-user-select: none;
@@ -22,9 +22,9 @@ body {
   height: 100%;
   font-size: 16px;
   line-height: 1.5;
-  font-family: 'Nunito Sans', 微軟正黑體, 'Microsoft JhengHei',
-    'Microsoft JhengHei UI', 'Microsoft YaHei', 'Microsoft YaHei UI',
-    'PingFang TC', 'Lantinghei TC', 'Heiti TC', 'Apple LiGothic', 'PMingLiU',
+  font-family: "Nunito Sans", 微軟正黑體, "Microsoft JhengHei",
+    "Microsoft JhengHei UI", "Microsoft YaHei", "Microsoft YaHei UI",
+    "PingFang TC", "Lantinghei TC", "Heiti TC", "Apple LiGothic", "PMingLiU",
     Arial, sans-serif;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .theme--red {
-  background: center / cover no-repeat url('@images/background/Partei_y2k.jpg');
+  background: center / cover no-repeat url("@images/background/Partei_y2k.png");
   background-position: top;
   color: $color-text-light;
 }

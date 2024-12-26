@@ -1,5 +1,5 @@
 // import { PIANO_KEYS, PianoKey } from '@js/constants';
-import { PianoKey } from '@js/constants';
+import { PianoKey } from "@js/constants";
 
 // interface SoundConfig {
 //   /** Oscillator type, can be "sawtooth" | "sine" | "square" | "triangle" */
@@ -85,32 +85,32 @@ export default class SoundEffects {
   // }
 
   /**
-  * Play the winning sound effect
-    * @returns Has sound effect been played
-    */
-    public win(): Promise<boolean> {
+   * Play the winning sound effect
+   * @returns Has sound effect been played
+   */
+  public win(): Promise<boolean> {
     if (this.isMuted) {
       return Promise.resolve(false);
     }
 
-    const musicNotes: SoundSeries[] = [
-      { key: 'C4', duration: 0.175 },
-      { key: 'D4', duration: 0.175 },
-      { key: 'E4', duration: 0.175 },
-      { key: 'G4', duration: 0.275 },
-      { key: 'E4', duration: 0.15 },
-      { key: 'G4', duration: 0.9 }
-    ];
-    const totalDuration = musicNotes
-      .reduce((currentNoteTime, { duration }) => currentNoteTime + duration, 0);
+    // const musicNotes: SoundSeries[] = [
+    //   { key: 'C4', duration: 0.175 },
+    //   { key: 'D4', duration: 0.175 },
+    //   { key: 'E4', duration: 0.175 },
+    //   { key: 'G4', duration: 0.275 },
+    //   { key: 'E4', duration: 0.15 },
+    //   { key: 'G4', duration: 0.9 }
+    // ];
+    // const totalDuration = musicNotes
+    //   .reduce((currentNoteTime, { duration }) => currentNoteTime + duration, 0);
 
     // this.playSound(musicNotes, { type: 'triangle', volume: 1, easeOut: true });
-    var audio = new Audio(require('../winner.mp3'));
+    var audio = new Audio(require("../winner.mp3"));
     audio.play();
     return new Promise<boolean>((resolve) => {
       setTimeout(() => {
         resolve(true);
-      }, totalDuration * 1000);
+      }, 3 * 1000);
     });
   }
 
@@ -126,13 +126,15 @@ export default class SoundEffects {
 
     const musicNotes: SoundSeries[] = [];
 
-    const totalDuration = musicNotes
-      .reduce((currentNoteTime, { duration }) => currentNoteTime + duration, 0);
-    var audio = new Audio(require('../Intro2.mp3'));
+    const totalDuration = musicNotes.reduce(
+      (currentNoteTime, { duration }) => currentNoteTime + duration,
+      0
+    );
+    var audio = new Audio(require("../Intro2.mp3"));
     audio.play();
     setTimeout(() => {
-      audio.pause()
-    }, durationInSecond * 1000)
+      audio.pause();
+    }, durationInSecond * 1000);
     return new Promise<boolean>((resolve) => {
       setTimeout(() => {
         resolve(true);
